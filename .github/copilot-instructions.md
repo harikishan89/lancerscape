@@ -1,0 +1,3 @@
+<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+
+This project is a modern, production-ready freelancing web application frontend named Lancerscape, built with React.js and Vite. The app should include all major features found in platforms like Upwork and Freelancer.com, such as authentication, dashboards, job listings, proposals, messaging, reviews, payments UI, and profile management. Use a modern UI library (e.g., Material-UI or Ant Design) and ensure the design is visually appealing and responsive.
