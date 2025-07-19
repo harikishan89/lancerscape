@@ -141,44 +141,147 @@ function Landing() {
       </Box>
 
       {/* Trusted by section */}
-      <Box sx={{ bgcolor: '#f7faf7', py: 2, borderBottom: 1, borderColor: 'grey.200' }}>
+      <Box sx={{ bgcolor: '#F8F7FC', py: 3, borderBottom: 1, borderColor: '#E5E1F6' }}>
         <Container maxWidth="lg">
-          <Stack direction="row" spacing={4} alignItems="center" justifyContent="center">
-            <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 700, letterSpacing: 1 }}>
+          <Stack direction="row" spacing={6} alignItems="center" justifyContent="center" flexWrap="wrap">
+            <Typography variant="body2" sx={{ color: '#6B7280', fontWeight: 600, letterSpacing: 1 }}>
               Trusted by:
             </Typography>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" height={28} />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg" alt="Nike" height={28} />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Google_2015_logo.svg" alt="Google" height={28} />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Unilever.svg" alt="Unilever" height={28} />
+            
+            {/* Microsoft Logo */}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <svg width="100" height="24" viewBox="0 0 100 24" fill="none">
+                <rect x="0" y="0" width="11" height="11" fill="#F25022"/>
+                <rect x="12" y="0" width="11" height="11" fill="#7FBA00"/>
+                <rect x="0" y="12" width="11" height="11" fill="#00A4EF"/>
+                <rect x="12" y="12" width="11" height="11" fill="#FFB900"/>
+                <text x="28" y="16" fill="#5F5F5F" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">Microsoft</text>
+              </svg>
+            </Box>
+
+            {/* Nike Logo */}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <svg width="60" height="24" viewBox="0 0 60 24" fill="none">
+                <path d="M24.09 8.64c-.34-.68-1.02-1.02-2.04-1.02-1.36 0-2.72.68-4.08 2.04L8.97 18.3c-.34.34-.68.34-1.02 0-.34-.34-.34-.68 0-1.02L16.95 8.64c1.36-1.36 2.72-2.04 4.08-2.04 1.02 0 1.7.34 2.04 1.02.34.68.34 1.36 0 2.04L14.07 18.3c-.34.34-.68.34-1.02 0-.34-.34-.34-.68 0-1.02l9-8.64c.34-.68.34-1.36 0-2.04z" fill="#000"/>
+                <text x="28" y="16" fill="#5F5F5F" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">NIKE</text>
+              </svg>
+            </Box>
+
+            {/* Google Logo */}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <svg width="80" height="24" viewBox="0 0 80 24" fill="none">
+                <text x="0" y="16" fontSize="16" fontFamily="Arial, sans-serif" fontWeight="500">
+                  <tspan fill="#4285F4">G</tspan>
+                  <tspan fill="#EA4335">o</tspan>
+                  <tspan fill="#FBBC05">o</tspan>
+                  <tspan fill="#4285F4">g</tspan>
+                  <tspan fill="#34A853">l</tspan>
+                  <tspan fill="#EA4335">e</tspan>
+                </text>
+              </svg>
+            </Box>
+
+            {/* Adobe Logo */}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <svg width="70" height="24" viewBox="0 0 70 24" fill="none">
+                <rect width="24" height="24" rx="4" fill="#FF0000"/>
+                <text x="8" y="16" fill="white" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="bold">A</text>
+                <text x="28" y="16" fill="#5F5F5F" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">Adobe</text>
+              </svg>
+            </Box>
+
+            {/* Slack Logo */}
+            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <svg width="70" height="24" viewBox="0 0 70 24" fill="none">
+                <rect x="0" y="8" width="8" height="8" rx="2" fill="#E01E5A"/>
+                <rect x="8" y="0" width="8" height="8" rx="2" fill="#36C5F0"/>
+                <rect x="8" y="16" width="8" height="8" rx="2" fill="#2EB67D"/>
+                <rect x="16" y="8" width="8" height="8" rx="2" fill="#ECB22E"/>
+                <text x="28" y="16" fill="#5F5F5F" fontSize="12" fontFamily="Arial, sans-serif" fontWeight="600">Slack</text>
+              </svg>
+            </Box>
           </Stack>
         </Container>
       </Box>
 
       {/* Categories/Services grid */}
-      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 10 } }}>
-        <Typography variant="h4" fontWeight={900} align="center" gutterBottom>
+      <Container maxWidth="lg" sx={{ py: { xs: 8, md: 12 } }}>
+        <Typography variant="h4" fontWeight={700} align="center" gutterBottom sx={{ color: '#2D1A47', mb: 2 }}>
           Browse talent by category
         </Typography>
-        <Typography align="center" color="text.secondary" mb={4}>
-          Get some inspiration from 100+ skills
+        <Typography align="center" sx={{ color: '#6B7280', mb: 6, fontSize: '18px' }}>
+          Get some inspiration from over 100+ professional skills
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid container spacing={3} justifyContent="center">
           {[
-            { label: 'Development & IT', desc: 'Web, Mobile, Software Dev', icon: '💻' },
-            { label: 'Design & Creative', desc: 'Graphics, Video, Animation', icon: '🎨' },
-            { label: 'Digital Marketing', desc: 'SEO, Social Media, Ads', icon: '📈' },
-            { label: 'Writing & Translation', desc: 'Content, Copy, Localization', icon: '✍️' },
-            { label: 'Admin & Customer Support', desc: 'Virtual Assistants, Support', icon: '📞' },
-            { label: 'Finance & Accounting', desc: 'Bookkeeping, Analysis', icon: '💰' },
-            { label: 'Engineering & Architecture', desc: 'CAD, 3D, Civil', icon: '🏗️' },
-            { label: 'Sales & Marketing', desc: 'Leads, Strategy, Research', icon: '🛒' },
+            { label: 'Development & IT', desc: 'Web, Mobile, Software Development', icon: 'Code', color: '#7C3AED' },
+            { label: 'Design & Creative', desc: 'Graphics, Video, Animation', icon: 'Palette', color: '#A78BFA' },
+            { label: 'Digital Marketing', desc: 'SEO, Social Media, Advertising', icon: 'TrendingUp', color: '#6366F1' },
+            { label: 'Writing & Translation', desc: 'Content, Copy, Localization', icon: 'Edit', color: '#8B5CF6' },
+            { label: 'Admin & Customer Support', desc: 'Virtual Assistants, Support', icon: 'Support', color: '#7C3AED' },
+            { label: 'Finance & Accounting', desc: 'Bookkeeping, Financial Analysis', icon: 'AccountBalance', color: '#A78BFA' },
+            { label: 'Engineering & Architecture', desc: 'CAD, 3D Modeling, Civil', icon: 'Engineering', color: '#6366F1' },
+            { label: 'Sales & Marketing', desc: 'Lead Generation, Strategy', icon: 'Campaign', color: '#8B5CF6' },
           ].map((cat) => (
-            <Grid item xs={12} sm={6} md={3} key={cat.label}>
-              <Box bgcolor="#fff" p={3} borderRadius={3} boxShadow={1} textAlign="center" sx={{ transition: '0.2s', '&:hover': { boxShadow: 4, bgcolor: 'grey.100' } }}>
-                <Box fontSize={48} mb={1}>{cat.icon}</Box>
-                <Typography variant="h6" fontWeight={700}>{cat.label}</Typography>
-                <Typography color="text.secondary" fontSize={15}>{cat.desc}</Typography>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={cat.label}>
+              <Box 
+                sx={{
+                  bgcolor: '#fff',
+                  p: 4,
+                  borderRadius: '20px',
+                  border: '1px solid #E5E1F6',
+                  textAlign: 'center',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 8px 30px rgba(124,58,237,0.15)',
+                    borderColor: '#7C3AED'
+                  }
+                }}
+              >
+                <Box 
+                  sx={{
+                    width: 64,
+                    height: 64,
+                    borderRadius: '16px',
+                    bgcolor: `${cat.color}15`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    mx: 'auto',
+                    mb: 3
+                  }}
+                >
+                  <Box 
+                    sx={{
+                      width: 32,
+                      height: 32,
+                      borderRadius: '8px',
+                      bgcolor: cat.color,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <Box sx={{ color: '#fff', fontSize: '16px', fontWeight: 'bold' }}>
+                      {cat.icon === 'Code' && '< />'}
+                      {cat.icon === 'Palette' && '🎨'}
+                      {cat.icon === 'TrendingUp' && '📈'}
+                      {cat.icon === 'Edit' && '✏️'}
+                      {cat.icon === 'Support' && '💬'}
+                      {cat.icon === 'AccountBalance' && '💼'}
+                      {cat.icon === 'Engineering' && '⚙️'}
+                      {cat.icon === 'Campaign' && '🚀'}
+                    </Box>
+                  </Box>
+                </Box>
+                <Typography variant="h6" fontWeight={600} sx={{ color: '#2D1A47', mb: 1.5 }}>
+                  {cat.label}
+                </Typography>
+                <Typography sx={{ color: '#6B7280', fontSize: '14px', lineHeight: 1.5 }}>
+                  {cat.desc}
+                </Typography>
               </Box>
             </Grid>
           ))}
@@ -284,13 +387,13 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/" element={<Landing />} />
+      <Route path="/dashboard" element={<FreelancerDashboard />} />
       <Route element={<Layout />}>
         <Route path="/jobs" element={<BrowseJobs />} />
         <Route path="/jobs/:id" element={<JobDetails />} />
         <Route path="/post-job" element={<PostJob />} />
         <Route path="/freelancer/:id" element={<FreelancerProfile />} />
         <Route path="/client/:id" element={<ClientProfile />} />
-        <Route path="/dashboard" element={<FreelancerDashboard />} />
       </Route>
     </Routes>
   );
