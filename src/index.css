@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   color: #213547;
@@ -8,6 +8,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
 }
 
 * {
@@ -21,6 +22,169 @@ html, body, #root {
   width: 100vw;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 960px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 960px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Universal container and layout fixes for all screen sizes */
+.MuiContainer-root {
+  max-width: 100% !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  overflow-x: hidden;
+}
+
+@media (min-width: 600px) {
+  .MuiContainer-root {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+/* Fix MuiGrid issues causing vertical lines */
+.MuiGrid-root.MuiGrid-container {
+  width: 100% !important;
+  margin: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.MuiGrid-root.MuiGrid-item {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+}
+
+/* Fix MuiBox overflow issues */
+.MuiBox-root {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Catch all dynamically generated MuiBox classes */
+.MuiBox-root[class*="css-"] {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Override any problematic CSS classes */
+.css-i4u9fk, .css-17fpwt7-MuiGrid-root {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+/* Specific fixes for the problematic classes mentioned */
+.MuiGrid-root.MuiGrid-direction-xs-row.css-17fpwt7-MuiGrid-root {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+.MuiBox-root.css-i4u9fk {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+/* Fix the new problematic class css-1d54i6v */
+.MuiBox-root.css-1d54i6v {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+.css-1d54i6v {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  max-width: 100% !important;
+}
+
+/* Ensure no spacing issues after popular services section */
+.MuiBox-root + .MuiBox-root {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Fix Grid spacing issues */
+.MuiGrid-container {
+  width: 100% !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+}
+
+.MuiGrid-container > .MuiGrid-item {
+  max-width: 100%;
+}
+
+/* Prevent vertical line from Grid spacing */
+.MuiGrid-direction-xs-row {
+  flex-wrap: wrap !important;
+  overflow-x: hidden !important;
+}
+
+/* Ensure no spacing issues at large screen sizes */
+@media (min-width: 1200px) {
+  .MuiContainer-root, .MuiContainer-maxWidthLg {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  .MuiGrid-container {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .MuiBox-root {
+    max-width: 100% !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Fix iOS input zoom */
+input[type="text"], input[type="email"], input[type="password"] {
+  font-size: 16px !important;
 }
 
 a {
