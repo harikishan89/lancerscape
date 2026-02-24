@@ -1,32 +1,715 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lancerscape - Modern Freelancing Platform</title>
-    
-    <!-- Google Fonts - Inter -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LancerScape — Connecting Sponsors with Top Freelancers</title>
+    <meta name="description" content="LancerScape bridges sponsors and freelancers. Sponsors post projects, freelancers deliver — we handle the rest.">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- GitHub Pages SPA redirect handling -->
-    <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="LancerScape" class="logo-img">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-ghost">Log In</a>
+                <a href="#" class="btn btn-primary">Get Started Free</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
+            <div class="grid-overlay"></div>
+        </div>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge animate-fade-up">
+                    <span class="badge-dot"></span>
+                    <span>Trusted by 36,000+ Peak Performance Teams</span>
+                </div>
+                <h1 class="hero-title animate-fade-up delay-1">
+                    Your vision.
+                    <span class="gradient-text">Their talent.</span>
+                    We make it happen.
+                </h1>
+                <p class="hero-subtitle animate-fade-up delay-2">
+                    Sponsors post projects, freelancers deliver excellence — and we bridge the gap. 
+                    LancerScape is your trusted intermediary for seamless project collaboration.
+                </p>
+                <div class="hero-search animate-fade-up delay-3">
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search for any service... e.g. &quot;web development&quot;">
+                        <button class="btn btn-primary btn-search">Search</button>
+                    </div>
+                    <div class="popular-tags">
+                        <span>Popular:</span>
+                        <a href="#">Digital Marketing</a>
+                        <a href="#">Graphics & Design</a>
+                        <a href="#">AI Services</a>
+                        <a href="#">Programming & Tech</a>
+                        <a href="#">Writing & Translation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual animate-fade-up delay-2">
+                <div class="hero-card-stack">
+                    <!-- Glowing backdrop orb -->
+                    <div class="hero-orb"></div>
+
+                    <!-- Card 1: Sponsor posting a project -->
+                    <div class="fcard fcard-sponsor">
+                        <div class="fcard-glow glow-gold"></div>
+                        <div class="fcard-icon icon-ring ring-gold">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div class="fcard-body">
+                            <span class="fcard-label">New Project Posted</span>
+                            <strong class="fcard-title">E-Commerce App Redesign</strong>
+                            <div class="fcard-meta">
+                                <span class="fcard-tag tag-gold"><i class="fa-solid fa-coins"></i> $4,500</span>
+                                <span class="fcard-tag tag-ghost"><i class="fa-solid fa-clock"></i> 3 weeks</span>
+                            </div>
+                        </div>
+                        <div class="fcard-pulse"></div>
+                    </div>
+
+                    <!-- Card 2: Freelancer matched -->
+                    <div class="fcard fcard-match">
+                        <div class="fcard-glow glow-green"></div>
+                        <div class="fcard-avatars">
+                            <div class="fcard-avatar av-sponsor"><i class="fa-solid fa-building"></i></div>
+                            <div class="fcard-connect-line">
+                                <span class="connect-dot"></span>
+                                <span class="connect-dot"></span>
+                                <span class="connect-dot"></span>
+                            </div>
+                            <div class="fcard-avatar av-freelancer"><i class="fa-solid fa-user-astronaut"></i></div>
+                        </div>
+                        <div class="fcard-body">
+                            <span class="fcard-label label-green"><i class="fa-solid fa-sparkles"></i> Perfect Match</span>
+                            <strong class="fcard-title">Sarah C. — 98% Skill Fit</strong>
+                            <div class="fcard-stars">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                <span>5.0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Escrow secured -->
+                    <div class="fcard fcard-escrow">
+                        <div class="fcard-glow glow-blue"></div>
+                        <div class="fcard-icon icon-ring ring-blue">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div class="fcard-body">
+                            <span class="fcard-label label-blue">Escrow Secured</span>
+                            <strong class="fcard-value">$4,500.00</strong>
+                            <div class="fcard-secure-bar">
+                                <div class="secure-fill"></div>
+                            </div>
+                            <span class="fcard-hint">Funds locked until approval</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Milestone completion -->
+                    <div class="fcard fcard-milestone">
+                        <div class="fcard-glow glow-purple"></div>
+                        <div class="fcard-icon icon-ring ring-purple">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <div class="fcard-body">
+                            <span class="fcard-label label-purple">Milestone Delivered</span>
+                            <strong class="fcard-title">Homepage UI Complete</strong>
+                            <div class="fcard-progress-row">
+                                <div class="fcard-progress-track">
+                                    <div class="fcard-progress-fill" style="width: 75%"></div>
+                                </div>
+                                <span class="fcard-progress-pct">3/4</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Payment released -->
+                    <div class="fcard fcard-payment">
+                        <div class="fcard-glow glow-emerald"></div>
+                        <div class="fcard-confetti">
+                            <span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="fcard-icon icon-ring ring-emerald">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </div>
+                        <div class="fcard-body">
+                            <span class="fcard-label label-emerald">Payment Sent!</span>
+                            <strong class="fcard-value value-green">+ $4,500.00</strong>
+                            <span class="fcard-hint">Freelancer paid instantly</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-stats-bar">
+            <div class="container">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <strong class="counter" data-target="120">0</strong><span>M+</span>
+                        <p>Active Talent</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong class="counter" data-target="217">0</strong><span>M+</span>
+                        <p>Projects Posted</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong class="counter" data-target="98">0</strong><span>%</span>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <strong class="counter" data-target="64">0</strong><span>M+</span>
+                        <p>Registered Companies</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ BRANDS ============ -->
+    <section class="brands-section">
+        <div class="container">
+            <p class="brands-label">Trusted by teams at</p>
+            <div class="brands-marquee">
+                <div class="brands-track">
+                    <div class="brand-item"><i class="fa-brands fa-google"></i> Google</div>
+                    <div class="brand-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                    <div class="brand-item"><i class="fa-brands fa-meta"></i> Meta</div>
+                    <div class="brand-item"><i class="fa-brands fa-spotify"></i> Spotify</div>
+                    <div class="brand-item"><i class="fa-brands fa-airbnb"></i> Airbnb</div>
+                    <div class="brand-item"><i class="fa-brands fa-stripe"></i> Stripe</div>
+                    <div class="brand-item"><i class="fa-brands fa-slack"></i> Slack</div>
+                    <div class="brand-item"><i class="fa-brands fa-shopify"></i> Shopify</div>
+                    <!-- Duplicate for infinite scroll -->
+                    <div class="brand-item"><i class="fa-brands fa-google"></i> Google</div>
+                    <div class="brand-item"><i class="fa-brands fa-microsoft"></i> Microsoft</div>
+                    <div class="brand-item"><i class="fa-brands fa-meta"></i> Meta</div>
+                    <div class="brand-item"><i class="fa-brands fa-spotify"></i> Spotify</div>
+                    <div class="brand-item"><i class="fa-brands fa-airbnb"></i> Airbnb</div>
+                    <div class="brand-item"><i class="fa-brands fa-stripe"></i> Stripe</div>
+                    <div class="brand-item"><i class="fa-brands fa-slack"></i> Slack</div>
+                    <div class="brand-item"><i class="fa-brands fa-shopify"></i> Shopify</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FEATURES ============ -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why LancerScape?</span>
+                <h2 class="section-title">Built to bridge <span class="gradient-text">sponsors & freelancers</span></h2>
+                <p class="section-desc">We handle the complexity so sponsors can focus on their vision and freelancers can focus on delivering great work.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up">
+                    <div class="feature-icon icon-purple">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3>Secure Escrow</h3>
+                    <p>Sponsors fund projects upfront into escrow. Freelancers get paid only when work is approved — safe for both sides.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon icon-blue">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Smart Matching</h3>
+                    <p>Our AI matches sponsor projects with the most qualified freelancers — based on skill, budget, and track record.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon icon-green">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Built-in messaging, file sharing, milestones, and progress tracking to keep every project on course.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon icon-orange">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <h3>Verified Profiles</h3>
+                    <p>Every freelancer is vetted. Transparent reviews and verified portfolios so sponsors hire with confidence.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon icon-pink">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3>Milestone Tracking</h3>
+                    <p>Break projects into milestones with automated tracking and invoicing — sponsors approve at every stage.</p>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon icon-cyan">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <h3>Global Talent Network</h3>
+                    <p>Sponsors access freelancers in 180+ countries. Multi-currency payments handled by us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Project Categories</span>
+                <h2 class="section-title">Browse popular <span class="gradient-text">project types</span></h2>
+                <p class="section-desc">Sponsors post projects across these categories. Freelancers — find the work that matches your skills.</p>
+            </div>
+            <div class="categories-grid">
+                <a href="#" class="category-card cat-marketing">
+                    <div class="cat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Digital Marketing</h3>
+                    <p>9,800+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-ai">
+                    <div class="cat-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>AI Services</h3>
+                    <p>5,100+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-writing">
+                    <div class="cat-icon"><i class="fa-solid fa-feather"></i></div>
+                    <h3>Writing & Translation</h3>
+                    <p>15,600+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-dev">
+                    <div class="cat-icon"><i class="fa-solid fa-code"></i></div>
+                    <h3>Programming & Tech</h3>
+                    <p>18,200+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-design">
+                    <div class="cat-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Graphics & Design</h3>
+                    <p>12,450+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-business">
+                    <div class="cat-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h3>Analytics & Strategy</h3>
+                    <p>6,900+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-video">
+                    <div class="cat-icon"><i class="fa-solid fa-heartbeat"></i></div>
+                    <h3>Health & Sports</h3>
+                    <p>4,200+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="category-card cat-music">
+                    <div class="cat-icon"><i class="fa-solid fa-pen-to-square"></i></div>
+                    <h3>Career Writing</h3>
+                    <p>3,800+ freelancers</p>
+                    <span class="cat-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ HOW IT WORKS ============ -->
+    <section class="how-section" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Simple Process</span>
+                <h2 class="section-title">How it <span class="gradient-text">works</span></h2>
+                <p class="section-desc">Whether you're a sponsor or a freelancer, getting started takes just minutes.</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                    <h3>Sponsor Posts a Project</h3>
+                    <p>Describe your project, set your budget and timeline. Our AI instantly notifies the best-matched freelancers.</p>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h3>Freelancer Applies</h3>
+                    <p>Qualified freelancers submit proposals. Sponsors review portfolios, ratings, and chat before selecting.</p>
+                </div>
+                <div class="step-connector">
+                    <div class="connector-line"></div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>We Handle the Rest</h3>
+                    <p>LancerScape manages escrow, milestones, and delivery. Payment releases when the sponsor approves the work.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SHOWCASE / CTA SPLIT ============ -->
+    <section class="showcase-section">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-content">
+                    <span class="section-tag">For Freelancers</span>
+                    <h2 class="section-title">Pick projects. Deliver work. <span class="gradient-text">Get paid.</span></h2>
+                    <ul class="showcase-list">
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>Choose projects that fit you</strong>
+                                <span>Browse sponsor-posted projects and apply to the ones that match your expertise.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>Work directly with sponsors</strong>
+                                <span>Collaborate through our platform with real-time messaging, file sharing, and milestone tools.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>Guaranteed payment via escrow</strong>
+                                <span>Funds are secured before you start. Deliver the work, get paid — no chasing invoices.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-circle-check"></i>
+                            <div>
+                                <strong>Grow your career</strong>
+                                <span>Build your reputation with verified reviews. Top freelancers unlock premium project access.</span>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-lg">Join as Freelancer <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="showcase-visual">
+                    <div class="showcase-mockup">
+                        <div class="mockup-header">
+                            <div class="mockup-dots">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mockup-profile">
+                                <div class="mockup-avatar"><i class="fa-solid fa-user"></i></div>
+                                <div class="mockup-info">
+                                    <div class="mockup-bar bar-wide"></div>
+                                    <div class="mockup-bar bar-medium"></div>
+                                </div>
+                            </div>
+                            <div class="mockup-stats-row">
+                                <div class="mockup-stat-card">
+                                    <div class="mini-chart">
+                                        <div class="chart-bar" style="height: 40%"></div>
+                                        <div class="chart-bar" style="height: 65%"></div>
+                                        <div class="chart-bar" style="height: 45%"></div>
+                                        <div class="chart-bar" style="height: 80%"></div>
+                                        <div class="chart-bar" style="height: 60%"></div>
+                                        <div class="chart-bar" style="height: 90%"></div>
+                                        <div class="chart-bar" style="height: 75%"></div>
+                                    </div>
+                                    <span>Earnings</span>
+                                    <strong>$12,450</strong>
+                                </div>
+                                <div class="mockup-stat-card">
+                                    <div class="stat-circle">
+                                        <svg viewBox="0 0 36 36">
+                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(240,176,16,0.2)" stroke-width="3"/>
+                                            <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#gradient)" stroke-width="3" stroke-dasharray="96, 100" stroke-linecap="round"/>
+                                            <defs>
+                                                <linearGradient id="gradient">
+                            <stop offset="0%" stop-color="#f0b010"/>
+                                                <stop offset="100%" stop-color="#ffc932"/>
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </div>
+                                    <span>Completion</span>
+                                    <strong>96%</strong>
+                                </div>
+                            </div>
+                            <div class="mockup-projects">
+                                <div class="project-row">
+                                    <div class="project-dot dot-green"></div>
+                                    <div class="mockup-bar bar-wide"></div>
+                                    <div class="mockup-bar bar-short"></div>
+                                </div>
+                                <div class="project-row">
+                                    <div class="project-dot dot-blue"></div>
+                                    <div class="mockup-bar bar-medium"></div>
+                                    <div class="mockup-bar bar-short"></div>
+                                </div>
+                                <div class="project-row">
+                                    <div class="project-dot dot-purple"></div>
+                                    <div class="mockup-bar bar-wide"></div>
+                                    <div class="mockup-bar bar-short"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">Loved by <span class="gradient-text">thousands</span></h2>
+                <p class="section-desc">See what sponsors and freelancers say about working through LancerScape.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"We posted a project and within hours had 10 quality proposals. LancerScape handled the escrow and milestones — we just focused on our vision. Incredible service."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <strong>James Rodriguez</strong>
+                            <span>Project Sponsor, TechStart Inc.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card featured">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"As a freelancer, I love that the escrow is already funded before I start work. LancerScape sits in the middle and handles everything — I just focus on delivering. My income tripled in 6 months!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <strong>Emma Nakamura</strong>
+                            <span>Freelance UI/UX Designer</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p>"The matching is unreal. We described our project and LancerScape connected us with the exact right freelancer. They manage the whole process so we don't have to."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <strong>Priya Sharma</strong>
+                            <span>Sponsor, GrowthLab</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PRICING ============ -->
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Simple, transparent <span class="gradient-text">pricing</span></h2>
+                <p class="section-desc">Start free. Scale as you grow. No hidden fees, ever.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Starter</h3>
+                        <p>For individuals getting started</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-amount">Free</span>
+                        <span class="price-period">forever</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Up to 5 proposals/month</li>
+                        <li><i class="fa-solid fa-check"></i> Basic profile</li>
+                        <li><i class="fa-solid fa-check"></i> Secure payments</li>
+                        <li><i class="fa-solid fa-check"></i> Community support</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Priority matching</li>
+                        <li class="disabled"><i class="fa-solid fa-xmark"></i> Analytics dashboard</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Pro</h3>
+                        <p>For serious freelancers & small teams</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">19</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited proposals</li>
+                        <li><i class="fa-solid fa-check"></i> Featured profile badge</li>
+                        <li><i class="fa-solid fa-check"></i> Priority AI matching</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced analytics</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated support</li>
+                        <li><i class="fa-solid fa-check"></i> Custom invoicing</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary btn-block">Start Free Trial</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p>For large teams & organizations</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">79</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fa-solid fa-check"></i> Everything in Pro</li>
+                        <li><i class="fa-solid fa-check"></i> Team management</li>
+                        <li><i class="fa-solid fa-check"></i> API access</li>
+                        <li><i class="fa-solid fa-check"></i> White-label options</li>
+                        <li><i class="fa-solid fa-check"></i> Account manager</li>
+                        <li><i class="fa-solid fa-check"></i> SLA guaranteed</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta-section">
+        <div class="cta-bg">
+            <div class="cta-blob cta-blob-1"></div>
+            <div class="cta-blob cta-blob-2"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to get your project done?</h2>
+                <p>Sponsors post projects, freelancers deliver — LancerScape handles everything in between. Start for free today.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-lg">Post a Project <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="#" class="btn btn-ghost-white btn-lg">Join as Freelancer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="logo.png" alt="LancerScape" class="logo-img">
+                    </a>
+                    <p>LancerScape is your trusted intermediary — connecting sponsors who have projects with freelancers who deliver. We manage escrow, milestones, and collaboration so both sides can focus on what matters.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#">Post a Project</a></li>
+                        <li><a href="#">Browse Projects</a></li>
+                        <li><a href="#">Find Freelancers</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers <span class="hiring-badge">Hiring!</span></a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Top Categories</h4>
+                    <ul>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">AI Services</a></li>
+                        <li><a href="#">On-page SEO</a></li>
+                        <li><a href="#">Graphics & Design</a></li>
+                        <li><a href="#">Programming & Tech</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Additional Links</h4>
+                    <ul>
+                        <li><a href="#">Terms & Condition</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund & Cancellation</a></li>
+                        <li><a href="#">Trust & Safety</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <p class="footer-contact-info">
+                    <a href="tel:+91-8807891347"><i class="fa-solid fa-phone"></i> +91-8807891347</a>
+                    <span>(Mon to Fri 9am - 6pm)</span>
+                </p>
+                <p class="footer-contact-info">
+                    <a href="mailto:support@lancerscape.com"><i class="fa-solid fa-envelope"></i> support@lancerscape.com</a>
+                </p>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; All rights reserved. 2026 LancerScape</p>
+                <div class="footer-payments">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal"></i>
+                    <i class="fa-brands fa-cc-stripe"></i>
+                    <i class="fa-brands fa-bitcoin"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
